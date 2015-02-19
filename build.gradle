@@ -1,0 +1,16 @@
+apply plugin: 'java'
+
+apply from: "file:${projectDir}/clover.gradle"
+
+sourceSets.main.java.srcDirs = ['src']
+sourceSets.test.java.srcDirs = ['test']
+
+dependencies {
+  testCompile group: 'junit', name: 'junit', version: "3.+"
+}
+
+repositories {
+  mavenCentral()
+}
+
+defaultTasks 'clean', 'test'
